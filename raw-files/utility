@@ -25,7 +25,17 @@ cmVmdGtuOjAxOjE3MTI0MzgyNzk6ckhpMlc4aWpKc3VpQkxYVVFXejdEcGVidGdl
 
 helm repo add helm-helm https://anthonydevops.jfrog.io/artifactory/api/helm/helm-helm --username kodela.akhil@gmail.com --password cmVmdGtuOjAxOjE3MTI0MzgyNzk6ckhpMlc4aWpKc3VpQkxYVVFXejdEcGVidGdl
 
+helm repo add web-app https://anthonydevops.jfrog.io/artifactory/helm-helm/web-app --username kodela.akhil@gmail.com --password cmVmdGtuOjAxOjE3MTI0MzgyNzk6ckhpMlc4aWpKc3VpQkxYVVFXejdEcGVidGdl
+
 upload:
 curl -ukodela.akhil@gmail.com:cmVmdGtuOjAxOjE3MTI0MzgyNzk6ckhpMlc4aWpKc3VpQkxYVVFXejdEcGVidGdl -T <PATH_TO_FILE> "https://anthonydevops.jfrog.io/artifactory/helm-helm/<TARGET_FILE_PATH>"
 
 curl -u kodela.akhil@gmail.com:cmVmdGtuOjAxOjE3MTI0MzgyNzk6ckhpMlc4aWpKc3VpQkxYVVFXejdEcGVidGdl -T sample-helm-chart-0.1.0.tgz  "https://anthonydevops.jfrog.io/artifactory/helm-helm/test-push"
+--------------
+helm web-app
+
+repo add:
+helm repo add web-app https://anthonydevops.jfrog.io/artifactory/helm-helm/web-app --username kodela.akhil@gmail.com --password cmVmdGtuOjAxOjE3MTI0MzgyNzk6ckhpMlc4aWpKc3VpQkxYVVFXejdEcGVidGdl
+
+push web-app:
+curl -u kodela.akhil@gmail.com:cmVmdGtuOjAxOjE3MTI0MzgyNzk6ckhpMlc4aWpKc3VpQkxYVVFXejdEcGVidGdl -T web-app-0.1.0.tgz  "https://anthonydevops.jfrog.io/artifactory/helm-helm/web-app"
