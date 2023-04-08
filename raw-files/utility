@@ -1,0 +1,31 @@
+kubectl create secret docker-registry regcred --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
+
+kubectl create secret docker-registry imagecred --docker-server=anthonydevops.jfrog.io --docker-username=kodela.akhil@gmail.com --docker-password=cmVmdGtuOjAxOjE3MTI0MzY5MTg6TUI3eEdDRGV1bzViNkc0TXVmR3d0aDRFRHBz --docker-email=kodela.akhil@gmail.com -n web-page
+
+
+docker login -u kodela.akhil@gmail.com anthonydevops.jfrog.io -p cmVmdGtuOjAxOjE3MTI0MzY5MTg6TUI3eEdDRGV1bzViNkc0TXVmR3d0aDRFRHBz
+
+----------
+docker login -ukodela.akhil@gmail.com anthonydevops.jfrog.io
+cmVmdGtuOjAxOjE3MTI0MzQ2MjY6R2VVcTdhSG1pTXFObjIwM044cGtyQXJ2U2xx
+--------------------------------
+front-end repo:
+docker login -u kodela.akhil@gmail.com anthonydevops.jfrog.io -p cmVmdGtuOjAxOjE3MTI0MzY5MTg6TUI3eEdDRGV1bzViNkc0TXVmR3d0aDRFRHBz
+
+docker tag <IMAGE_ID> anthonydevops.jfrog.io/front-end-docker/<DOCKER_IMAGE>:<DOCKER_TAG>
+docker push anthonydevops.jfrog.io/front-end-docker/<DOCKER_IMAGE>:<DOCKER_TAG>
+
+docker tag 7cfbbec8963d anthonydevops.jfrog.io/front-end-docker/test-busybox:latest
+
+docker build -t anthonydevops.jfrog.io/front-end-docker/html:0.0.1 .
+docker push anthonydevops.jfrog.io/front-end-docker/html:0.0.1
+------------------------------
+helm repo
+cmVmdGtuOjAxOjE3MTI0MzgyNzk6ckhpMlc4aWpKc3VpQkxYVVFXejdEcGVidGdl
+
+helm repo add helm-helm https://anthonydevops.jfrog.io/artifactory/api/helm/helm-helm --username kodela.akhil@gmail.com --password cmVmdGtuOjAxOjE3MTI0MzgyNzk6ckhpMlc4aWpKc3VpQkxYVVFXejdEcGVidGdl
+
+upload:
+curl -ukodela.akhil@gmail.com:cmVmdGtuOjAxOjE3MTI0MzgyNzk6ckhpMlc4aWpKc3VpQkxYVVFXejdEcGVidGdl -T <PATH_TO_FILE> "https://anthonydevops.jfrog.io/artifactory/helm-helm/<TARGET_FILE_PATH>"
+
+curl -u kodela.akhil@gmail.com:cmVmdGtuOjAxOjE3MTI0MzgyNzk6ckhpMlc4aWpKc3VpQkxYVVFXejdEcGVidGdl -T sample-helm-chart-0.1.0.tgz  "https://anthonydevops.jfrog.io/artifactory/helm-helm/test-push"

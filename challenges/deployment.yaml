@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: jekyll
+  
+  namespace: development
+
+  labels:
+
+    run=jekyll
+
+spec:
+
+  replicas: 1
+
+  selector:
+
+    matchLabels:
+
+      run=jekyll
+
+  template:
+
+    metadata:
+
+      labels:
+
+        run=jekyll
+
+    spec:
+
+      volumes:
+
+      - name: site
+
+        persistentVolumeClaim:
+
+          claimName: jekyll-site
+
+      initContainers:
+
+      - name: copy-jekyll-site
+
+        image: kodekloud/jekyll
+
+        command: ["jekyll", "new", "/site" ]
+
+        volumeMounts:
+
+        - name: site
+
+          mountPath: /site
+
+      containers:
+
+      - name: jekyll
+
+        image: kodekloud/jekyll-serve
+
+        volumeMounts:
+
+        - name: site
+
+          mountPath: /site

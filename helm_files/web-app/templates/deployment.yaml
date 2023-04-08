@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: home-page
+  namespace: web-page
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: home-page
+  template:
+    metadata:
+      labels:
+        app: home-page
+    spec:
+      imagePullSecrets:
+      - name: imagecred
+      containers:
+      - name: home-page
+        image: anthonydevops.jfrog.io/front-end-docker/html:0.0.1
+        ports:
+        - containerPort: 80
