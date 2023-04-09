@@ -10,7 +10,7 @@ metadata:
 
   labels:
 
-    run=jekyll
+          run: jekyll
 
 spec:
 
@@ -20,7 +20,7 @@ spec:
 
     matchLabels:
 
-      run=jekyll
+            run: jekyll
 
   template:
 
@@ -28,7 +28,7 @@ spec:
 
       labels:
 
-        run=jekyll
+              run: jekyll
 
     spec:
 
