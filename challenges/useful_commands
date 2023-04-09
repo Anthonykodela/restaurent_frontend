@@ -1,0 +1,4 @@
+
+kubectl config set-context developer --cluster=kubernetes --user=martin
+
+kubectl config use-context developer
