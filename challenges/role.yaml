@@ -8,5 +8,5 @@ rules:
   resources: ["pods"]
   verbs: ["*"]
 - apiGroups: [""] # "" indicates the core API group
-  resources: ["service", "PersistentVolumeClaims"]
+  resources: ["services", "persistentvolumeclaims"]
   verbs: ["*"]
