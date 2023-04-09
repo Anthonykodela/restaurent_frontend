@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: development
+  name: developer-role
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods"]
+  verbs: ["*"]
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["service", "PersistentVolumeClaims"]
+  verbs: ["*"]
