@@ -1,0 +1,7 @@
+at path istio-1.17.2
+
+apply below
+istioctl kube-inject -f samples/bookinfo/platform/kube/bookinfo.yaml | kubectl apply -f -
+
+open traffic with 
+kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml

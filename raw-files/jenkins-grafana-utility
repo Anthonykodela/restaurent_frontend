@@ -1,0 +1,12 @@
+  jenkins-admin-password: S2g5WkRWT3Q1ZDUzMGpMaVZIUHV4cQ==
+  jenkins-admin-user: YWRtaW4=
+  jenkins password: Kh9ZDVOt5d530jLiVHPuxq
+  Username: admin
+
+  ----
+
+KUBE-STATE-METRICS
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts && helm repo update && helm install ksm prometheus-community/kube-state-metrics --set image.tag=v2.8.2 -n default
+
+NODE-PORT 
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts && helm repo update && helm install nodeexporter prometheus-community/prometheus-node-exporter -n default
